@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
+import com.example.jingdong.Adapter.BannerAdapter;
 import com.example.jingdong.Adapter.SingAdapter;
 import com.example.jingdong.R;
 
@@ -33,7 +34,7 @@ public class HomeFragment extends Fragment {
         RecyclerView.RecycledViewPool recycledViewPool = new RecyclerView.RecycledViewPool();
         recycledViewPool.setMaxRecycledViews(0,20);
         re.setRecycledViewPool(recycledViewPool);
-        //搜索框,通栏布局
+        //第一行搜索框,通栏布局
         SingleLayoutHelper singleLayoutHelper = new SingleLayoutHelper();
         //公共属性
         singleLayoutHelper.setItemCount(1);// 设置布局里Item个数
@@ -45,22 +46,19 @@ public class HomeFragment extends Fragment {
         SingAdapter singAdapter = new SingAdapter(singleLayoutHelper, getContext());
 
 
-
-
-
-
-
-
-
-
-
-
+        //第二行,通栏布局
+        SingleLayoutHelper bannerHelper = new SingleLayoutHelper();
+        //公共属性
+        singleLayoutHelper.setItemCount(1);// 设置布局里Item个数
+        //创建适配器
+        BannerAdapter bannerAdapter = new BannerAdapter(bannerHelper, getContext());
 
 
         //创建适配器的包
         DelegateAdapter adapter = new DelegateAdapter(Manager);
         //添加第一个布局  搜索框
         adapter.addAdapter(singAdapter);
+        adapter.addAdapter(bannerAdapter);
         re.setLayoutManager(Manager);
         re.setAdapter(adapter);
 
