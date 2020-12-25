@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="50dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.youth.banner.Banner
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/tv_title"
+        android:text="品牌制造商直供"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/banner_item"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="50dp"/>
 
-    </com.youth.banner.Banner>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -4,9 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
@@ -15,18 +16,13 @@ import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.example.jingdong.R;
 
 /**
- * @创建时间 2020/12/25 16:09
+ * @创建时间 2020/12/25 18:35
  */
-public class ButtonAdapter extends DelegateAdapter.Adapter<ButtonAdapter.ViewHolder> {
+public class TitleAdapter extends DelegateAdapter.Adapter<TitleAdapter.ViewHolder> {
     private SingleLayoutHelper singleLayoutHelper;
     private Context context;
-    private Button buttonOne;
-    private Button buttonTwo;
-    private Button buttonThree;
-    private Button buttonFour;
-    private Button buttonFive;
 
-    public ButtonAdapter(SingleLayoutHelper singleLayoutHelper, Context context) {
+    public TitleAdapter(SingleLayoutHelper singleLayoutHelper, Context context) {
         this.singleLayoutHelper = singleLayoutHelper;
         this.context = context;
     }
@@ -39,7 +35,7 @@ public class ButtonAdapter extends DelegateAdapter.Adapter<ButtonAdapter.ViewHol
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.buttonitem, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.titleitem, parent, false);
         return new ViewHolder(view);
     }
 
@@ -50,13 +46,12 @@ public class ButtonAdapter extends DelegateAdapter.Adapter<ButtonAdapter.ViewHol
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 1;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
         }
     }
 }
